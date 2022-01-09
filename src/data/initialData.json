@@ -1,0 +1,78 @@
+{
+  "blocks": {
+    "blockId1": {
+      "width": 1000,
+      "components": [
+        "componentId1",
+        "componentId2",
+        "componentId3",
+        "componentId4"
+      ]
+    },
+    "blockId2": {
+      "width": 1000,
+      "components": [
+        "componentId5",
+        "componentId6",
+        "componentId3",
+        "componentId4"
+      ]
+    }
+  },
+  "components": {
+    "componentId1": {
+      "position": {
+        "top": 0,
+        "left": 0,
+        "height": 100,
+        "width": 400
+      },
+      "content": "What makes this app different from other such apps are its numerous features and many specialties."
+    },
+    "componentId2": {
+      "position": {
+        "top": 0,
+        "left": 700,
+        "height": 260,
+        "width": 300
+      },
+      "content": "Easy to use, easy to scale. That's not all though. It is so much more than just the interface of a simple drawing program; it could do everything you'd expect in an image editing application (especially if they came with some support for landscape orientation)."
+    },
+    "componentId3": {
+      "position": {
+        "top": 80,
+        "left": 200,
+        "height": 120,
+        "width": 400
+      },
+      "content": "Icon packs A huge collection can be found within one menu bar without opening them again!"
+    },
+    "componentId4": {
+      "position": {
+        "top": 225,
+        "left": 250,
+        "height": 100,
+        "width": 400
+      },
+      "content": "There will always-be at least four icons available even wher"
+    },
+    "componentId5": {
+      "position": {
+        "top": 10,
+        "left": 50,
+        "height": 100,
+        "width": 500
+      },
+      "content": "What makes this app different from other such apps are its numerous features and many specialties."
+    },
+    "componentId6": {
+      "position": {
+        "top": 25,
+        "left": 700,
+        "height": 260,
+        "width": 250
+      },
+      "content": "Easy to use, easy to scale. That's not all though. It is so much more than just the interface of a simple drawing program; it could do everything you'd expect in an image editing application (especially if they came with some support for landscape orientation)."
+    }
+  }
+}

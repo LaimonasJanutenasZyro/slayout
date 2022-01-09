@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "start": "concurrently 'vite --port 3333 --open /preview' vitest",
     "dev": "vite --port 3333 --open",
     "build": "vite build",
     "preview": "vite preview",
@@ -9,7 +10,9 @@
   },
   "dependencies": {
     "@vueuse/core": "^7.4.1",
+    "prismjs": "^1.26.0",
     "vue": "^3.2.26",
+    "vue-prism-component": "^2.0.0",
     "vue-router": "^4.0.12"
   },
   "devDependencies": {
@@ -19,6 +22,7 @@
     "@unocss/reset": "^0.20.0",
     "@vitejs/plugin-vue": "^2.0.1",
     "@vue/test-utils": "^2.0.0-rc.18",
+    "concurrently": "^7.0.0",
     "eslint": "^8.5.0",
     "jsdom": "^19.0.0",
     "pnpm": "^6.24.3",
