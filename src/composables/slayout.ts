@@ -1,6 +1,4 @@
 export const getGridBlocks = (initialData) => {
-  const t0 = performance.now()
-
   const blocks = Object.entries(initialData.blocks).reduce((allBlocks, [blockId, blockValue]) => {
     /**
      * GET all X and Y positions
@@ -44,18 +42,16 @@ export const getGridBlocks = (initialData) => {
 
       const gridRowStart = uniqueAndOrderedYPositions.indexOf(position.top) + 1
       const gridRowEnd = uniqueAndOrderedYPositions.indexOf(position.top + position.height) + 1
-      const gridRow = `${gridRowStart}/${gridRowEnd}`
 
       const gridColumnStart = uniqueAndOrderedXPositions.indexOf(position.left) + 1
       const gridColumnEnd = uniqueAndOrderedXPositions.indexOf(position.left + position.width) + 1
-      const gridColumn = `${gridColumnStart}/${gridColumnEnd}`
 
       return {
         position,
         content,
         componentId,
-        gridRow,
-        gridColumn,
+        gridRow: `${gridRowStart}/${gridRowEnd}`,
+        gridColumn: `${gridColumnStart}/${gridColumnEnd}`,
       }
     })
 
@@ -70,9 +66,6 @@ export const getGridBlocks = (initialData) => {
       },
     }
   }, {})
-
-  const t1 = performance.now()
-  console.log('\x1B[41m', t1 - t0, 'milliseconds')
 
   return blocks
 }
