@@ -44,7 +44,7 @@ const gridBlocks = getGridBlocks(initialData)
         <div
           v-for="component in block.components"
           :key="component.id"
-          class="slayout__component z-2 border-light-500 border-current border-1 rounded p-2 opacity-60 hover:opacity-100 transition"
+          class="slayout__component z-2 border-dark-500 dark:border-light-500 border-1 rounded p-2 opacity-60 hover:opacity-100 transition"
           :style="{
             gridRow: component.gridRow,
             gridColumn: component.gridColumn,
