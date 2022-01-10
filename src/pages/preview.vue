@@ -80,7 +80,7 @@ const gridBlocks = getGridBlocks(initialData)
         <div
           v-for="(row, r) in block.gridRows"
           :key="r"
-          class="slayout__row relative z-1 opacity-20 transition grid"
+          class="slayout__row relative z-1 opacity-20 transition grid "
           :class="{
             'opacity-80': hoveredRow === r && hoveredBlockId === block.blockId,
           }"
@@ -151,7 +151,7 @@ const gridBlocks = getGridBlocks(initialData)
 <style>
 .slayout__row {
   grid-column: -1 / 1;
-  outline: solid 1px rgba(255, 255, 255, 0.2);
+  outline: solid 1px rgba(122, 122, 122, 0.2);
 }
 
 .slayout__row::after {
@@ -168,7 +168,7 @@ const gridBlocks = getGridBlocks(initialData)
 
 .slayout__column {
   grid-row: -1 / 1;
-  outline: solid 1px rgba(255, 255, 255, 0.2);
+  outline: solid 1px rgba(122, 122, 122, 0.2);
 }
 
 .slayout__column::after {
