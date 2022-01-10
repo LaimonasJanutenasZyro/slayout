@@ -107,7 +107,7 @@ const gridBlocks = getGridBlocks(initialData)
       INSTRUCTIONS
     </h2>
     <p>
-      Take <span class="font-mono text-sm bg-dark-50 py-0.5 px-1 rounded inline-flex items-center">
+      Take <span class="font-mono text-sm bg-light-50 dark:bg-dark-50 py-0.5 px-1 rounded inline-flex items-center">
         src/data/initialData.json
       </span> and and reconstruct it so that:
     </p>
@@ -115,17 +115,17 @@ const gridBlocks = getGridBlocks(initialData)
       <li>Blocks would contain corresponding components with their data.</li>
       <li>
         Components data would be extended with additional
-        <span class="font-mono text-sm bg-dark-50 py-0.5 px-1 rounded inline-block">{ gridRow: '1/2', gridColumn: '3/4' }</span>
+        <span class="font-mono text-sm bg-light-50 dark:bg-dark-50 py-0.5 px-1 rounded inline-block">{ gridRow: '1/2', gridColumn: '3/4' }</span>
         where 1/2 is starting/ending rows, 3/4 is starting/endiing colums.
       </li>
       <li>
         Blocks data would be extended with additional
-        <span class="font-mono text-sm bg-dark-50 py-0.5 px-1 rounded inline-block">{ gridTemplateRows: 'minmax(200px, auto) minmax(100px, auto)' }</span>
+        <span class="font-mono text-sm bg-light-50 dark:bg-dark-50 py-0.5 px-1 rounded inline-block">{ gridTemplateRows: 'minmax(200px, auto) minmax(100px, auto)' }</span>
         where 200px and 100px is row heigts calculated from components.
       </li>
       <li>
         Blocks data would be extended with additional
-        <span class="font-mono text-sm bg-dark-50 py-0.5 px-1 rounded inline-block">{ gridTemplateColumns: '0.2fr 0.1fr' }</span>
+        <span class="font-mono text-sm bg-light-50 dark:bg-dark-50 py-0.5 px-1 rounded inline-block">{ gridTemplateColumns: '0.2fr 0.1fr' }</span>
         where 0.2fr and 0.1fr is relative column width (0.1 == 10%).
       </li>
     </ol>
@@ -135,14 +135,14 @@ const gridBlocks = getGridBlocks(initialData)
     </h2>
     <ol class="list-decimal px-4">
       <li>
-        <span class="font-mono text-sm bg-dark-50 py-0.5 px-1 rounded inline-block">{ gridRow: '1/2', gridColumn: '3/4' }</span>
+        <span class="font-mono text-sm bg-light-50 dark:bg-dark-50 py-0.5 px-1 rounded inline-block">{ gridRow: '1/2', gridColumn: '3/4' }</span>
         values take 1 as first index (not 0).
       </li>
       <li>There can be multiple components with same top / left values</li>
       <li>There can be components with top values matching other components bottom values</li>
       <li>
         There can be components that are not sticking to the side of the block, like
-        <span class="font-mono text-sm bg-dark-50 py-0.5 px-1 rounded inline-block">blockId2</span>
+        <span class="font-mono text-sm bg-light-50 dark:bg-dark-50 py-0.5 px-1 rounded inline-block">blockId2</span>
       </li>
     </ol>
   </div>

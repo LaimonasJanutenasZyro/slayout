@@ -32,34 +32,55 @@ const copy = () => {
       <ol class="list-decimal px-4">
         <li>
           clone
-          <span class="font-mono text-sm bg-dark-50 py-0.5 px-1 rounded inline-flex items-center">
+          <span
+            class="font-mono text-sm bg-light-50 dark:bg-dark-50 py-0.5 px-1 rounded inline-flex items-center"
+          >
             git@github.com:algirdas-zyro/slayout.git
-            <carbon-copy v-if="!isCopied" class="relative text-xs cursor-pointer ml-2" @click="copy" />
-            <carbon-checkmark-outline v-else class="relative text-xs cursor-pointer ml-2" />
+            <carbon-copy
+              v-if="!isCopied"
+              class="relative text-xs cursor-pointer ml-2"
+              @click="copy"
+            />
+            <carbon-checkmark-outline
+              v-else
+              class="relative text-xs cursor-pointer ml-2"
+            />
           </span>
         </li>
         <li>
           initialize and start the challenge
-          <span class="font-mono text-sm bg-dark-50 py-0.5 px-1 rounded inline-flex items-center">
+          <span
+            class="font-mono text-sm bg-light-50 dark:bg-dark-50 py-0.5 px-1 rounded inline-flex items-center"
+          >
             yarn start
           </span>
         </li>
         <li>
           observe
-          <span class="font-mono text-sm bg-dark-50 py-0.5 px-1 rounded inline-flex items-center">
+          <span
+            class="font-mono text-sm bg-light-50 dark:bg-dark-50 py-0.5 px-1 rounded inline-flex items-center"
+          >
             src/data/initialData.json
-          </span> and
-          <span class="font-mono text-sm bg-dark-50 py-0.5 px-1 rounded inline-flex items-center">
+          </span>
+          and
+          <span
+            class="font-mono text-sm bg-light-50 dark:bg-dark-50 py-0.5 px-1 rounded inline-flex items-center"
+          >
             src/data/renderData.json
-          </span> - this is initial and expeced final render data blocks with extended components
+          </span>
+          - this is initial and expeced final render data blocks with extended components
         </li>
         <li>
           open
-          <span class="font-mono text-sm bg-dark-50 py-0.5 px-1 rounded inline-flex items-center">
+          <span
+            class="font-mono text-sm bg-light-50 dark:bg-dark-50 py-0.5 px-1 rounded inline-flex items-center"
+          >
             src/composables/slayout.ts
           </span>
           and
-          <span class="font-mono text-sm bg-dark-50 py-0.5 px-1 rounded inline-flex items-center">
+          <span
+            class="font-mono text-sm bg-light-50 dark:bg-dark-50 py-0.5 px-1 rounded inline-flex items-center"
+          >
             test/slayout.test.ts
           </span>
           for tests
