@@ -1,5 +1,4 @@
 export const getGridBlocks = (initialData) => {
-  console.log(initialData)
   return {
     blockId1: {
       width: 1000,
