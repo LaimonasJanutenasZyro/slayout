@@ -7,7 +7,8 @@ export const getGridBlocks = (initialData) => {
     blockComponentsCopy.sort((a, b) => components[a].position.top - components[b].position.top)
 
     let foundRowCounter = 0
-    let currentPixel = 0
+    // start from start of first element
+    let currentPixel = initialData.components[blockComponentsCopy[0]].position.top
     let prevMatchedPixel = 0
     const gridRowSizes = []
 
