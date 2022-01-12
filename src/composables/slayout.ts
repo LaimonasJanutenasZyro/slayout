@@ -37,6 +37,8 @@ export const getGridBlocks = (initialData: {blocks: Blocks, components: Componen
     const [blockId, block] = entry
     const gridRows = getGridRows(block, components)
     console.warn(gridRows)
+    const gridColumns = getGridColumns(block, components)
+    console.warn(gridColumns)
   })
 
   Object.entries(blocks).forEach(entry => {
@@ -57,35 +59,29 @@ const getGridRows = (block: Block, components: Components) => {
       return [...acc, top, top + height]
     }, [])
 
-    const uniqueValues = _.uniq(rawValues)
-    const sortedUniqueValues = uniqueValues.sort((a, b) => a - b)
-
-    // I did not get this process
-    // I couldn't figure out that I need to do this
-    const gridRows = sortedUniqueValues.map((value, index) => {
-      const previousValue = sortedUniqueValues[index - 1] || 0
-      return value - previousValue
-    })
-
-    return gridRows
+    return parseRawValues(rawValues)
 }
 
 const getGridColumns = (block: Block, components: Components) => {
   const rawValues = block.components.reduce((acc, componentId) => {
     const component = components[componentId]
-    const { top, height } = component.position
-    return [...acc, top, top + height]
+    const { left, width } = component.position
+    return [...acc, left, left + width]
   }, [])
 
+  return parseRawValues(rawValues)
+}
+
+const parseRawValues = (rawValues) => {
   const uniqueValues = _.uniq(rawValues)
   const sortedUniqueValues = uniqueValues.sort((a, b) => a - b)
 
   // I did not get this process
   // I couldn't figure out that I need to do this
-  const gridRows = sortedUniqueValues.map((value, index) => {
+  const gridValues = sortedUniqueValues.map((value, index) => {
     const previousValue = sortedUniqueValues[index - 1] || 0
     return value - previousValue
   })
 
-  return gridRows
+  return gridValues
 }
