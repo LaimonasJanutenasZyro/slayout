@@ -39,15 +39,11 @@ export const getGridBlocks = (initialData: {blocks: Blocks, components: Componen
     console.warn(gridRows)
     const gridColumns = getGridColumns(block, components)
     console.warn(gridColumns)
+
+    const gridTemplateRows = getGridTemplateRows(gridRows)
+    console.warn(gridTemplateRows)
   })
 
-  Object.entries(blocks).forEach(entry => {
-    const [blockId, block] = entry
-    const {components: blockComponents} = block
-    blockComponents.forEach(component => {
-
-    })
-  })
   return {
   }
 }
@@ -84,4 +80,14 @@ const parseRawValues = (rawValues) => {
   })
 
   return gridValues
+}
+
+function getGridTemplateRows(gridRows: number[]) {
+  return gridRows.reduce((acc, value) => {
+    if(value){
+      return `${acc? acc + ' ' : ''}minmax(${value}px, auto)`
+    }
+
+    return acc
+  }, '')
 }
