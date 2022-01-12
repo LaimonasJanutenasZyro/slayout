@@ -72,7 +72,7 @@
     "blockId": "blockId2",
     "gridTemplateRows": "minmax(10px, auto) minmax(15px, auto) minmax(55px, auto) minmax(30px, auto) minmax(90px, auto) minmax(25px, auto) minmax(60px, auto) minmax(40px, auto)",
     "gridTemplateColumns": "0.05fr 0.15fr 0.05fr 0.3fr 0.05fr 0.05fr 0.05fr 0.25fr 0.05fr",
-    "gridRows": [10, 15, 55, 30, 90, 25, 60, 40],
-    "gridColumns": [50, 150, 50, 300, 50, 50, 50, 250, 50]
+    "gridRows": [0, 10, 15, 55, 30, 90, 25, 60, 40],
+    "gridColumns": [0, 50, 150, 50, 300, 50, 50, 50, 250, 50]
   }
 }
