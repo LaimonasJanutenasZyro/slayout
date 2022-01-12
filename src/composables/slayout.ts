@@ -56,26 +56,36 @@ const getGridRows = (block: Block, components: Components) => {
       const {top, height} = component.position
       return [...acc, top, top + height]
     }, [])
-    console.warn(rawValues)
+
     const uniqueValues = _.uniq(rawValues)
+    const sortedUniqueValues = uniqueValues.sort((a, b) => a - b)
 
-    console.warn(uniqueValues)
-
-    const gridRows = uniqueValues.map((value, index) => {
-      const previousValue = uniqueValues[index - 1] || 0
+    // I did not get this process
+    // I couldn't figure out that I need to do this
+    const gridRows = sortedUniqueValues.map((value, index) => {
+      const previousValue = sortedUniqueValues[index - 1] || 0
       return value - previousValue
     })
 
     return gridRows
 }
 
+const getGridColumns = (block: Block, components: Components) => {
+  const rawValues = block.components.reduce((acc, componentId) => {
+    const component = components[componentId]
+    const { top, height } = component.position
+    return [...acc, top, top + height]
+  }, [])
 
+  const uniqueValues = _.uniq(rawValues)
+  const sortedUniqueValues = uniqueValues.sort((a, b) => a - b)
 
+  // I did not get this process
+  // I couldn't figure out that I need to do this
+  const gridRows = sortedUniqueValues.map((value, index) => {
+    const previousValue = sortedUniqueValues[index - 1] || 0
+    return value - previousValue
+  })
 
-// const getComponentData = (components: Component[], componentId: string) => {
-//   const component = components.find(component => component.id === componentId)
-//   if (!component) {
-//     return null
-//   }
-//   return component
-// }
+  return gridRows
+}
