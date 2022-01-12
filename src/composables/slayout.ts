@@ -113,7 +113,7 @@ const getComponentPosition = (
   component: Component, 
   gridRows: number[], 
   gridColumns: number[]) => {
-    return 'hitler did nothing wrong'
+    return 'Bush did 9/11'
   }
   
 
