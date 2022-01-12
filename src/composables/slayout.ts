@@ -35,13 +35,15 @@ export const getGridBlocks = (initialData: {blocks: Blocks, components: Componen
 
   Object.entries(blocks).forEach(entry => {
     const [blockId, block] = entry
+    const {width} = block
     const gridRows = getGridRows(block, components)
     console.warn(gridRows)
     const gridColumns = getGridColumns(block, components)
     console.warn(gridColumns)
-
     const gridTemplateRows = getGridTemplateRows(gridRows)
     console.warn(gridTemplateRows)
+    const gridTemplateColumns = getGridTemplateColumns(width, gridColumns)
+    console.warn(gridTemplateColumns)
   })
 
   return {
@@ -82,10 +84,21 @@ const parseRawValues = (rawValues) => {
   return gridValues
 }
 
+// also these two were unclear to me. What are their purpose ?
 function getGridTemplateRows(gridRows: number[]) {
   return gridRows.reduce((acc, value) => {
     if(value){
       return `${acc? acc + ' ' : ''}minmax(${value}px, auto)`
+    }
+
+    return acc
+  }, '')
+}
+
+function getGridTemplateColumns(width: number, gridColumns: number[]) {
+  return gridColumns.reduce((acc, value) => {
+    if (value) {
+      return `${acc ? acc + ' ' : ''}${value/width}fr`
     }
 
     return acc
