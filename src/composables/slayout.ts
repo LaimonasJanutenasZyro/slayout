@@ -37,12 +37,16 @@ export const getGridBlocks = (initialData: {blocks: Blocks, components: Componen
     const [blockId, block] = entry
     const {width} = block
     const gridRows = getGridRows(block, components)
-    console.warn(gridRows)
     const gridColumns = getGridColumns(block, components)
-    console.warn(gridColumns)
     const gridTemplateRows = getGridTemplateRows(gridRows)
-    console.warn(gridTemplateRows)
     const gridTemplateColumns = getGridTemplateColumns(width, gridColumns)
+    
+    Object.values(components).forEach(component => {
+      const componentPosition = getComponentPosition(component, gridRows, gridColumns)
+    })    
+    console.warn(gridRows)
+    console.warn(gridColumns)
+    console.warn(gridTemplateRows)
     console.warn(gridTemplateColumns)
   })
 
@@ -70,7 +74,7 @@ const getGridColumns = (block: Block, components: Components) => {
   return parseRawValues(rawValues)
 }
 
-const parseRawValues = (rawValues) => {
+const parseRawValues = (rawValues: number[]) => {
   const uniqueValues = _.uniq(rawValues)
   const sortedUniqueValues = uniqueValues.sort((a, b) => a - b)
 
@@ -85,7 +89,7 @@ const parseRawValues = (rawValues) => {
 }
 
 // also these two were unclear to me. What are their purpose ?
-function getGridTemplateRows(gridRows: number[]) {
+const getGridTemplateRows = (gridRows: number[]) => {
   return gridRows.reduce((acc, value) => {
     if(value){
       return `${acc? acc + ' ' : ''}minmax(${value}px, auto)`
@@ -95,7 +99,7 @@ function getGridTemplateRows(gridRows: number[]) {
   }, '')
 }
 
-function getGridTemplateColumns(width: number, gridColumns: number[]) {
+const getGridTemplateColumns = (width: number, gridColumns: number[]) => {
   return gridColumns.reduce((acc, value) => {
     if (value) {
       return `${acc ? acc + ' ' : ''}${value/width}fr`
@@ -104,3 +108,12 @@ function getGridTemplateColumns(width: number, gridColumns: number[]) {
     return acc
   }, '')
 }
+
+const getComponentPosition = (
+  component: Component, 
+  gridRows: number[], 
+  gridColumns: number[]) => {
+    return 'hitler did nothing wrong'
+  }
+  
+
